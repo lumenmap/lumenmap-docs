@@ -1,0 +1,66 @@
+/**
+ * LumenMap docs theme — brand + category palette.
+ */
+
+:root {
+  --lm-soroban: #7b61ff;
+  --lm-payments: #14b8a6;
+  --lm-dex: #f59e0b;
+  --lm-trustlines: #3b82f6;
+  --lm-account: #ec4899;
+  --lm-other: #6b7280;
+
+  --ifm-color-primary: #7b61ff;
+  --ifm-color-primary-dark: #6a4fef;
+  --ifm-color-primary-darker: #5f44e8;
+  --ifm-color-primary-darkest: #4a32c4;
+  --ifm-color-primary-light: #8d78ff;
+  --ifm-color-primary-lighter: #9580ff;
+  --ifm-color-primary-lightest: #b3a6ff;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #9580ff;
+  --ifm-color-primary-dark: #7b61ff;
+  --ifm-color-primary-darker: #6a4fef;
+  --ifm-color-primary-darkest: #5f44e8;
+  --ifm-color-primary-light: #a392ff;
+  --ifm-color-primary-lighter: #b3a6ff;
+  --ifm-color-primary-lightest: #c9c0ff;
+  --docusaurus-highlighted-code-line-bg: rgba(123, 97, 255, 0.2);
+}
+
+.category-swatch {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 2px;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+
+.category-swatch.soroban {
+  background: var(--lm-soroban);
+}
+
+.category-swatch.payments {
+  background: var(--lm-payments);
+}
+
+.category-swatch.dex {
+  background: var(--lm-dex);
+}
+
+.category-swatch.trustlines {
+  background: var(--lm-trustlines);
+}
+
+.category-swatch.account {
+  background: var(--lm-account);
+}
+
+.category-swatch.other {
+  background: var(--lm-other);
+}
