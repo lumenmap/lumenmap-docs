@@ -12,7 +12,11 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://lumenmap.github.io',
+  url: process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : 'http://localhost:3000',
   baseUrl: '/',
 
   organizationName: 'lumenmap',
@@ -34,7 +38,6 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           routeBasePath: 'docs',
           editUrl: 'https://github.com/lumenmap/lumenmap/tree/main/website/',
-          showLastUpdateTime: true,
         },
         blog: false,
         theme: {

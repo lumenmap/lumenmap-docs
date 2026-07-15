@@ -2,7 +2,7 @@
 
 Official documentation site for **[LumenMap](https://github.com/lumenmap/lumenmap)** — a Stellar network activity dashboard built on Hubble / BigQuery.
 
-**Live site:** [https://lumenmap.github.io/lumenmap/](https://lumenmap.github.io/lumenmap/)
+**Live site:** deployed on [Vercel](https://vercel.com) (production URL after first deploy).
 
 ## What this covers
 
@@ -17,7 +17,7 @@ Official documentation site for **[LumenMap](https://github.com/lumenmap/lumenma
 
 - [Docusaurus 3](https://docusaurus.io/) (classic preset)
 - React 19 + TypeScript
-- Deployed to GitHub Pages from the main LumenMap repo
+- Hosted on [Vercel](https://vercel.com)
 
 ## Local development
 
@@ -30,13 +30,21 @@ npm start
 
 Open [http://localhost:3000/](http://localhost:3000/). Hot reload is enabled.
 
-From the **parent LumenMap monorepo** you can also use:
+## Deploy (Vercel)
+
+| Setting | Value |
+| --- | --- |
+| Framework | Other |
+| Build command | `npm run build` |
+| Output directory | `build` |
+| Node.js | 20 |
 
 ```bash
-npm run docs:dev
-npm run docs:build
-npm run docs:preview
+npx vercel        # preview
+npx vercel --prod # production
 ```
+
+Or connect the GitHub repo in the Vercel dashboard — every push to `main` deploys automatically.
 
 ## Scripts
 
@@ -57,11 +65,12 @@ src/css/        # Brand theme
 static/img/     # Logo and favicon
 sidebars.ts     # Sidebar navigation
 docusaurus.config.ts
+vercel.json
 ```
 
 ## Contributing
 
-Docs live in this folder. Prefer short, task-oriented pages. When you change API shapes or setup steps, update the matching doc in the same PR.
+Prefer short, task-oriented pages. When you change API shapes or setup steps, update the matching doc in the same PR.
 
 See [Contributing](docs/guide/contributing.md) for dashboard and entity-label contributions.
 
