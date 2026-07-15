@@ -4,7 +4,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'LumenMap',
-  tagline: 'Stellar network activity at a glance',
+  tagline:
+    'Stellar network activity at a glance — hierarchical treemaps, KPIs, and named entities powered by Hubble.',
   favicon: 'img/favicon.ico',
 
   future: {
@@ -12,7 +13,7 @@ const config: Config = {
   },
 
   url: 'https://lumenmap.github.io',
-  baseUrl: '/lumenmap/',
+  baseUrl: '/',
 
   organizationName: 'lumenmap',
   projectName: 'lumenmap',
@@ -33,6 +34,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           routeBasePath: 'docs',
           editUrl: 'https://github.com/lumenmap/lumenmap/tree/main/website/',
+          showLastUpdateTime: true,
         },
         blog: false,
         theme: {
@@ -43,16 +45,30 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/logo.png',
+    metadata: [
+      {
+        name: 'keywords',
+        content:
+          'Stellar, Soroban, Hubble, analytics, treemap, dashboard, blockchain',
+      },
+      {name: 'twitter:card', content: 'summary'},
+    ],
     colorMode: {
       defaultMode: 'dark',
       respectPrefersColorScheme: true,
+    },
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
+      },
     },
     navbar: {
       title: 'LumenMap',
       logo: {
         alt: 'LumenMap',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
@@ -60,6 +76,16 @@ const config: Config = {
           sidebarId: 'docsSidebar',
           position: 'left',
           label: 'Docs',
+        },
+        {
+          to: '/docs/guide/getting-started',
+          label: 'Get started',
+          position: 'left',
+        },
+        {
+          to: '/docs/api/activity',
+          label: 'API',
+          position: 'left',
         },
         {
           href: 'https://github.com/lumenmap/lumenmap',
@@ -72,8 +98,12 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Documentation',
           items: [
+            {
+              label: 'Overview',
+              to: '/docs/intro',
+            },
             {
               label: 'Getting Started',
               to: '/docs/guide/getting-started',
@@ -83,8 +113,21 @@ const config: Config = {
               to: '/docs/guide/using-the-dashboard',
             },
             {
+              label: 'Architecture',
+              to: '/docs/guide/architecture',
+            },
+          ],
+        },
+        {
+          title: 'Reference',
+          items: [
+            {
               label: 'API',
               to: '/docs/api/activity',
+            },
+            {
+              label: 'Entity Registry',
+              to: '/docs/guide/entities',
             },
             {
               label: 'Roadmap',
@@ -93,7 +136,7 @@ const config: Config = {
           ],
         },
         {
-          title: 'More',
+          title: 'Project',
           items: [
             {
               label: 'GitHub',
@@ -103,6 +146,10 @@ const config: Config = {
               label: 'Contributing',
               to: '/docs/guide/contributing',
             },
+            {
+              label: 'MIT License',
+              href: 'https://github.com/lumenmap/lumenmap/blob/main/LICENSE',
+            },
           ],
         },
       ],
@@ -111,7 +158,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-      additionalLanguages: ['bash', 'json'],
+      additionalLanguages: ['bash', 'json', 'http'],
     },
   } satisfies Preset.ThemeConfig,
 };

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Overview
+description: LumenMap turns Stellar network activity into a hierarchical treemap you can read at a glance and drill into.
 ---
 
 # LumenMap
@@ -40,6 +41,9 @@ See the [roadmap](./roadmap.md) for what comes next.
 
 ## Start here
 
-- [Getting Started](./guide/getting-started.md) — install and run locally
-- [Using the Dashboard](./guide/using-the-dashboard.md) — treemap, periods, KPIs
-- [API reference](./api/activity.md) — `GET /api/activity`
+| Goal | Page |
+| --- | --- |
+| Install and run locally | [Getting Started](./guide/getting-started.md) |
+| Learn the UI | [Using the Dashboard](./guide/using-the-dashboard.md) |
+| Understand data flow | [Architecture](./guide/architecture.md) |
+| Call the API | [API reference](./api/activity.md) |

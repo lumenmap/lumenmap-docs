@@ -1,15 +1,16 @@
 import type {ReactNode} from 'react';
-import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
+  eyebrow: string;
   description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
+    eyebrow: 'Explore',
     title: 'Hierarchical treemap',
     description: (
       <>
@@ -20,15 +21,17 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Live Hubble data',
+    eyebrow: 'Data',
+    title: 'Live Hubble feeds',
     description: (
       <>
-        Powered by Stellar Hubble on BigQuery. KPI cards and period filters for
-        1 day, 7 days, 30 days, or the current calendar month.
+        Built on Stellar Hubble in BigQuery. KPI cards and period filters for 1
+        day, 7 days, 30 days, or the current calendar month.
       </>
     ),
   },
   {
+    eyebrow: 'Context',
     title: 'Named entities',
     description: (
       <>
@@ -38,6 +41,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
+    eyebrow: 'Community',
     title: 'Open source',
     description: (
       <>
@@ -48,14 +52,15 @@ const FeatureList: FeatureItem[] = [
   },
 ];
 
-function Feature({title, description}: FeatureItem) {
+function Feature({title, eyebrow, description}: FeatureItem) {
   return (
-    <div className={clsx('col col--3')}>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
-    </div>
+    <article className={styles.feature}>
+      <p className={styles.eyebrow}>{eyebrow}</p>
+      <Heading as="h3" className={styles.title}>
+        {title}
+      </Heading>
+      <p className={styles.description}>{description}</p>
+    </article>
   );
 }
 
@@ -63,9 +68,19 @@ export default function HomepageFeatures(): ReactNode {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+        <div className={styles.intro}>
+          <Heading as="h2" className={styles.sectionTitle}>
+            See the network, then zoom in
+          </Heading>
+          <p className={styles.sectionLead}>
+            Explorers show one transaction at a time. LumenMap shows how Stellar
+            activity is distributed — then lets you drill into the actors behind
+            it.
+          </p>
+        </div>
+        <div className={styles.grid}>
+          {FeatureList.map((props) => (
+            <Feature key={props.title} {...props} />
           ))}
         </div>
       </div>

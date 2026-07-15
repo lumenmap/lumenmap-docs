@@ -1,6 +1,86 @@
 .features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
+  padding: 4.5rem 0 5rem;
   width: 100%;
+  background: var(--ifm-background-color);
+  border-top: 1px solid var(--lm-border);
+}
+
+.intro {
+  max-width: 40rem;
+  margin: 0 auto 2.75rem;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+}
+
+.sectionLead {
+  margin: 0;
+  color: var(--lm-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.75rem 2rem;
+}
+
+.feature {
+  position: relative;
+  padding-top: 1rem;
+}
+
+.feature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--lm-soroban), var(--lm-payments));
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-family: var(--ifm-heading-font-family);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary);
+}
+
+.title {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  margin: 0;
+  color: var(--lm-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+@media screen and (max-width: 996px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .features {
+    padding: 3rem 0 3.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }

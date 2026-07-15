@@ -6,6 +6,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Guide',
+      collapsed: false,
       items: [
         'guide/getting-started',
         'guide/using-the-dashboard',
@@ -17,6 +18,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'API',
+      collapsed: false,
       items: ['api/activity'],
     },
     'roadmap',
